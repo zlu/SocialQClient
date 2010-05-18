@@ -1,0 +1,172 @@
+<html>
+<head>
+	<link rel="stylesheet" href="/index.css" type="text/css" charset="utf-8">
+	<script src="js/date.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery-1.4.2.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.easing.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.timeago.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.quicksand.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/queue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/live.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/history.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	<div id="header">
+		<div id="primary">
+			<a id="logo" href="http://www.orange.com" target="ti:systembrowser">
+				<img src="/assets/images/orange.png"></img>
+			</a>
+			<img id="ajax" class="hidden" src="/assets/images/ajax.gif"></img>
+			<center>
+				<div id="tabs">
+					<img src="/assets/images/tab-divider.png"></img>
+					<img id="rank-tab" class="tab active-tab" src="/assets/images/rank-on.png"></img>
+					<img src="/assets/images/tab-divider.png"></img>
+					<img id="live-tab" class="tab" src="/assets/images/live-off.png"></img>
+					<img src="/assets/images/tab-divider.png"></img>
+					<img id="history-tab" class="tab" src="/assets/images/history-off.png"></img>
+					<img src="/assets/images/tab-divider.png"></img>
+				</div>
+			</center>
+		</div>
+		<div id="secondary">
+			<div id="rank-secondary" class="secondary-nav">
+				<div>
+					<img src="/assets/images/button-divider.png"></img>
+					<img id="queue-weight-sort" class="sort-option clickable selected-sort" src="/assets/images/queue-weight-button.png"></img>
+					<img id="social-sort" class="sort-option clickable" src="/assets/images/social-button.png"></img>
+					<img id="chrono-sort" class="sort-option clickable" src="/assets/images/chrono-button.png"></img>
+					<img src="/assets/images/button-divider.png"></img>
+					<img id="refresh-button" class="clickable" src="/assets/images/refresh-button.png"></img>
+				</div>
+				<ul class="bc">
+					<li>Queue</li>
+				</ul>
+			</div>
+			<!--
+			<div id="social-secondary" class="secondary-nav hidden">
+				<ul class="bc">
+					<li>Social</li>
+				</ul>
+			</div>
+			-->
+			<div id="live-secondary" class="secondary-nav hidden">
+				<div class="search-field">
+					<input id="live-search" type="text" value="@orange"></input>
+					<img id="clear-live" class="clickable" src="/assets/images/clear-btn.png"></img>
+				</div>
+				<ul class="bc">
+					<li>Live</li>
+				</ul>
+			</div>
+			<div id="history-secondary" class="secondary-nav hidden">
+				<div class="search-field">
+					<input id="history-search" type="text" value=""></input>
+					<img id="clear-history" class="clickable" src="/assets/images/clear-btn.png"></img>
+				</div>
+				<ul class="bc">
+					<li>History</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="contents">
+		<div id="rank" class="content-area">
+			<div id="rank-queue-view">
+				<ul id="rank-queue" class="queue-list"></ul>
+				<ul id="destination" class="hidden"></ul>
+				<ul id="queue-cache" class="hidden"></ul>
+			</div>
+			<div class="detail-view hidden">
+				<div class="detail-header">
+					<!-- forgive me father, for I have sinned... -->
+					<table>
+						<tr>
+							<td valign="top" style="padding:10px;">
+								<div class="avatar-bubble"></div>
+							</td>
+							<td valign="top">
+								<h3 class="detail-name"></h3>
+								<table style="margin-bottom:10px;">
+									<tr>
+										<td class="following" style="width:120px;">following <span></span></td>
+										<td class="location">location <span></span></td>
+									</tr>
+									<tr>
+										<td class="followers">followers <span></span></td>
+										<td class="web">web <span></span></td>
+									</tr>
+								</table>
+								<table>
+									<tr>
+										<td><img src="/assets/images/source-twitter-inactive.png"></img></td>
+										<td><div class="action twitter"></div></td>
+										<td><img src="/assets/images/source-phone-inactive.png"></img></td>
+										<td><div class="action phone"></div></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					<div class="silver-divider"></div>
+					<h4>Recent History</h4>
+				</div>
+				<div class="history-view">
+					
+				</div>
+			</div>
+		</div>
+		<!--
+		<div id="social" class="hidden content-area">
+			<h1>Social</h1>
+		</div>
+		-->
+		<div id="live" class="hidden content-area">
+			<ul id="live-search-results" class="queue-list"></ul>
+		</div>
+		<div id="history" class="hidden content-area">
+			<ul class="queue-list"></ul>
+			<div class="detail-view hidden">
+				<div class="detail-header">
+					<!-- forgive me father, for I have sinned... -->
+					<table>
+						<tr>
+							<td valign="top" style="padding:10px;">
+								<div class="avatar-bubble"></div>
+							</td>
+							<td valign="top">
+								<h3 class="detail-name"></h3>
+								<table style="margin-bottom:10px;">
+									<tr>
+										<td class="following" style="width:120px;">following <span></span></td>
+										<td class="location">location <span></span></td>
+									</tr>
+									<tr>
+										<td class="followers">followers <span></span></td>
+										<td class="web">web <span></span></td>
+									</tr>
+								</table>
+								<table>
+									<tr>
+										<td><img src="/assets/images/source-twitter-inactive.png"></img></td>
+										<td><div class="action twitter"></div></td>
+										<td><img src="/assets/images/source-phone-inactive.png"></img></td>
+										<td><div class="action phone"></div></td>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					<div class="silver-divider"></div>
+					<h4>Recent History</h4>
+				</div>
+				<div class="history-view">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

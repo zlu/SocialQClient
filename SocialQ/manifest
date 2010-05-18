@@ -1,0 +1,25 @@
+#appname:SocialQ
+#appid:com.orange.socialq
+#publisher:kevin
+#image:orange256.png
+#url:http://appcelerator.com
+#guid:44b78116-1a31-4b28-9716-e3f8a18fe3c3
+#desc:No description provided
+#type:desktop
+runtime:1.0.0
+api:1.0.0
+javascript:1.0.0
+tiapp:1.0.0
+tifilesystem:1.0.0
+tiplatform:1.0.0
+tiui:1.0.0
+ticodec:1.0.0
+tidatabase:1.0.0
+tidesktop:1.0.0
+tigrowl:1.0.0
+timedia:1.0.0
+timonkey:1.0.0
+tinetwork:1.0.0
+tinotification:1.0.0
+tiprocess:1.0.0
+tiworker:1.0.0
