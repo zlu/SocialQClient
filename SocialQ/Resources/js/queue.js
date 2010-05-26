@@ -31,6 +31,14 @@
         socialq.queue.historyForId(user.guid);
         
       },
+      removeFromQueue: function(guid) {
+        $.each(users,function(idx,val) {
+          if (val.guid === guid) {
+            users.splice(idx,1);
+          }
+        });
+        $("li[data-id="+options.customer_guid+"]").remove();
+      },
       historyForId: function(guid) {
         var user = Titanium.JSON.parse(Titanium.App.Properties.getString(guid));
         

@@ -271,17 +271,17 @@
       data:Titanium.JSON.stringify(options),
       dataType:"json",
       success: function(data) {
+        socialq.removeFromQueue(options.customer_guid);
         console.log(data);
       }
     });
-    $("li[data-id="+options.customer_guid+"]").remove();
   }
   
   //Configure final data API usage
   $.extend(socialq, {
     data: {
       getQueue: function(fn) {
-        if (Titanium.App.Properties.getBool("test")) {
+        if (Titanium.App.Properties.hasProperty("test") && Titanium.App.Properties.getBool("test")) {
           getQueueSim(fn);
         }
         else {
@@ -289,7 +289,7 @@
         }
       },
       agentReady: function(options) {
-        if (Titanium.App.Properties.getBool("test")) {
+        if (Titanium.App.Properties.hasProperty("test") && Titanium.App.Properties.getBool("test")) {
           removeFromQueueSim(options.customer_guid);
         }
         else {
